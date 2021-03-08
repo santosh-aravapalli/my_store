@@ -22,3 +22,10 @@ class orderform(ModelForm):
         model = orders
         fields = "__all__"
 
+
+class officeform(ModelForm):
+    
+    class Meta:
+        model = office
+        fields = "__all__"
+        
