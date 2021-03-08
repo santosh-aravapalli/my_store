@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title> "employee "</title>
+</head>
+
+<body>
+
+{% if orders %}
+
+
+<table class="table" style="width:100%">
+  <thead>
+    <tr>
+      <th scope="col"> order number</th>
+      <th scope="col"> customer name </th>
+      <th scope="col"> order date </th>
+        <th scope="col"> shipping date </th>
+        <th scope="col"> status </th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for data in orders %}
+
+      <tr>
+      <th scope="row">{{ data.ordernumber }}</th>
+      <td>
+          <a href="{% url "orderdetail" data.ordernumber %}"> {{ data.custmomer_no.contact_firstname }} </a>
+      </td>
+      <td>{{ data.order_date }}</td>
+      <td>{{ data.shippeddate }}</td>
+      <td>{{ data.status }}</td>
+    </tr>
+
+  {% endfor %}
+
+  </tbody>
+</table>
+
+
+{% endif %}
+
+
+
+</body>
+
+</html>

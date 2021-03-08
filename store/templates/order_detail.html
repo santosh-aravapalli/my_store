@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title> order details </title>
+</head>
+
+<body>
+
+{% if orderdetail %}
+
+
+<table class="table" style="width:100%">
+  <thead>
+    <tr>
+      <th scope="col"> product code </th>
+      <th scope="col"> product name </th>
+         <th scope="col"> customer name </th>
+      <th scope="col"> quantity orderd </th>
+        <th scope="col"> each price </th>
+        <th scope="col"> orderline number </th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for data in orderdetail %}
+
+      <tr>
+      <th scope="row">{{ data.productcode}}</th>
+      <td>{{ data.productcode.productname }}</td>
+          <td>{{ data.ordernumber.custmomer_no.contact_firstname }}</td>
+      <td>{{ data.quantityordered }}</td>
+      <td>{{ data.price_each }}</td>
+      <td>{{ data.orderedlinenumber }}</td>
+    </tr>
+
+  {% endfor %}
+
+  </tbody>
+</table>
+
+
+{% endif %}
+
+
+
+</body>
+
+</html>
