@@ -26,6 +26,6 @@ class orderform(ModelForm):
 class officeform(ModelForm):
     
     class Meta:
-        model = office
+        model = offices
         fields = "__all__"
         
