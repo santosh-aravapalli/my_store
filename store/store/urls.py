@@ -37,6 +37,8 @@ urlpatterns = [
     path("api/",include(emp_router.urls)),
     path("office/<str:off_code>",officecodeapi,name="off_code_api"),
 
+    path("api/",include('sample_api.urls')),
+
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
