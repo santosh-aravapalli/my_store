@@ -21,8 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open('D:\jango\secret_key.txt') as f:
-    SECRET_KEY =f.read().strip()
+SECRET_KEY = '1y9!vgomy(#pr51wkw9gghisgrtf4oo$@bc^g^*iitf^3j9v*&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -82,22 +81,29 @@ WSGI_APPLICATION = 'store.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mystore',
-        'USER': 'root',
-        'PASSWORD': 'aravapalli',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'mystore',
+#        'USER': 'root',
+#        'PASSWORD': 'aravapalli',
+#        'HOST': '127.0.0.1',
+#        'PORT': '3306',
+#    }
+# }
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-        'LOCATION': 'my_cache_table',
-    }
-}
+
+#CACHES = {
+#    'default': {
+#        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+#        'LOCATION': 'my_cache_table',
+#    }
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -145,4 +151,12 @@ STATICFILES_DIRS = [
 
 #cahe time settings
 #https://docs.djangoproject.com/en/3.1/topics/cache/#the-per-site-cache
-CACHE_MIDDLEWARE_SECONDS = 300
+# CACHE_MIDDLEWARE_SECONDS = 300
+
+REST_FRAMEWORK = {
+    # 'DEFAULT_PERMISSION_CLASSES' :
+    # 'DEFAULT_AUTHENTICATION_CLASSES' :
+    'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRenderer',),
+    'DEFAULT_PARSER_CLASSES': ('rest_framework.parsers.JSONParser',),
+    # 'EXCEPTION_HANDLER':
+}
