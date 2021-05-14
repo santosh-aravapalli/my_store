@@ -8,6 +8,6 @@ from .views import *
 
 urlpatterns = [
 
-    path("createemployee/", Createemployee, name="products"),
+    path("createemployee/", Createemployee, name="createemployee"),
 
 ]
